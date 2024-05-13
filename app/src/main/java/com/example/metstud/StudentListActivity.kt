@@ -1,5 +1,6 @@
 package com.example.metstud
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.Data
 import androidx.activity.enableEdgeToEdge
@@ -37,14 +38,24 @@ class StudentListActivity : AppCompatActivity() {
             "231401036",
             "241401340"
         )
-        
+
         recyclerView = findViewById(R.id.studentlist)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
+
         dataList = arrayListOf<studentData>()
         getData()
-        
+
+        // Create AdapterClass instance and set onItemClick
+        val adapter = AdapterClass(dataList, object : AdapterClass.OnItemClickListener {
+            override fun onItemClick(data: studentData) {
+                val intent = Intent(this@StudentListActivity, detailActivity::class.java)
+                intent.putExtra("data", data)
+                startActivity(intent)
+            }
+        })
+        recyclerView.adapter = adapter
     }
 
     private fun getData(){
@@ -52,6 +63,5 @@ class StudentListActivity : AppCompatActivity() {
             val data = studentData(imageList[i], nameList[i], nimList[i])
             dataList.add(data)
         }
-        recyclerView.adapter = AdapterClass(dataList)
     }
 }

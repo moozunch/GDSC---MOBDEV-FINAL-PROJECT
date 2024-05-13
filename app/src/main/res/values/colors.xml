@@ -2,5 +2,6 @@
 <resources>
     <color name="basis_black">#2e2e2e</color>
     <color name="basis_gray">#dee3ea</color>
+    <color name="sage">#397d54</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

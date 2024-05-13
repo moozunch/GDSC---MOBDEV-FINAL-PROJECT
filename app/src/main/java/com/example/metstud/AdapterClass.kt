@@ -9,7 +9,9 @@ import android.widget.TextView
 import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterClass (private val dataList: ArrayList<studentData>): RecyclerView.Adapter<AdapterClass.ViewHolderClass>(){
+
+
+class AdapterClass(private val dataList: ArrayList<studentData>, private val listener: OnItemClickListener) : RecyclerView.Adapter<AdapterClass.ViewHolderClass>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.studentlist, parent, false)
@@ -21,6 +23,10 @@ class AdapterClass (private val dataList: ArrayList<studentData>): RecyclerView.
         holder.rvImage.setImageResource(currentItem.dataImage)
         holder.rvName.text = currentItem.dataName
         holder.rvNim.text = currentItem.dataNim
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(currentItem)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -31,6 +37,10 @@ class AdapterClass (private val dataList: ArrayList<studentData>): RecyclerView.
         val rvImage: ImageView = itemView.findViewById(R.id.profile_image)
         val rvName: TextView = itemView.findViewById(R.id.name)
         val rvNim: TextView = itemView.findViewById(R.id.nim)
-
     }
+
+    interface OnItemClickListener {
+        fun onItemClick(data: studentData)
+    }
+
 }
