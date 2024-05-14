@@ -12,20 +12,27 @@ import androidx.recyclerview.widget.RecyclerView
 
 class StudentListActivity : AppCompatActivity() {
 
+    //deklarasi variable
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataList: ArrayList<studentData>
     lateinit var imageList: Array<Int>
     lateinit var nameList: Array<String>
     lateinit var nimList: Array<String>
+    lateinit var emailList: Array<String>
+    lateinit var angkatanList: Array<Int>
+    lateinit var fakultasList: Array<String>
+    lateinit var prodiList: Array<String>
+    lateinit var semesterList: Array<Int>
+    lateinit var statusList: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_student)
 
-
+        //isi data yang akan ditampilkan (array)
         imageList = arrayOf(
-            R.drawable.profile,
+            R.drawable.profile2,
             R.drawable.profile
         )
 
@@ -37,6 +44,31 @@ class StudentListActivity : AppCompatActivity() {
         nimList = arrayOf(
             "231401036",
             "241401340"
+        )
+
+        emailList = arrayOf(
+            "annisaputri@gmail.com",
+            "destarizky@gmail.com",
+        )
+        angkatanList = arrayOf(
+            23,
+            24,
+        )
+        fakultasList = arrayOf(
+            "Fasilkom-Ti",
+            "Fakultas Ekonomi dan Bisnis",
+        )
+        prodiList = arrayOf(
+            "Ilmu Komputer",
+            "Kewirausahaan",
+        )
+        semesterList = arrayOf(
+            3,
+            1,
+        )
+        statusList = arrayOf(
+            "Mahasiswa Aktif",
+            "Mahasiswa Aktif",
         )
 
         recyclerView = findViewById(R.id.studentlist)
@@ -58,9 +90,20 @@ class StudentListActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
     }
 
+    //mengambil data dari array dan memasukkannya ke dalam dataList
     private fun getData(){
-        for (i in imageList.indices){
-            val data = studentData(imageList[i], nameList[i], nimList[i])
+        for (i in emailList.indices){
+            val data = studentData(
+                imageList[i],
+                nameList[i],
+                nimList[i],
+                emailList[i],
+                angkatanList[i],
+                fakultasList[i],
+                prodiList[i],
+                semesterList[i],
+                statusList[i]
+            )
             dataList.add(data)
         }
     }

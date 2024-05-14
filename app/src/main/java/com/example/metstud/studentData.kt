@@ -6,11 +6,23 @@ import android.os.Parcelable
 data class studentData(
     var dataImage: Int,
     var dataName: String,
-    var dataNim: String
+    var dataNim: String,
+    var dataEmail: String,
+    var dataAngkatan: Int,
+    var dataFakultas: String,
+    var dataProdi: String,
+    var dataSemester: Int,
+    var dataStatus: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readInt(),
+        parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readInt(),
         parcel.readString()!!
     ) {
     }
@@ -19,6 +31,12 @@ data class studentData(
         parcel.writeInt(dataImage)
         parcel.writeString(dataName)
         parcel.writeString(dataNim)
+        parcel.writeString(dataEmail)
+        parcel.writeInt(dataAngkatan)
+        parcel.writeString(dataFakultas)
+        parcel.writeString(dataProdi)
+        parcel.writeInt(dataSemester)
+        parcel.writeString(dataStatus)
     }
 
     override fun describeContents(): Int {

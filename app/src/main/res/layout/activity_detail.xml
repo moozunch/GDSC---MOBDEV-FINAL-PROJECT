@@ -20,16 +20,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
-                android:id="@+id/label_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="45dp"
                 android:layout_marginTop="25dp"
-                android:drawableStart="@drawable/arrow___left_circle"
+                android:src="@drawable/arrow___left_circle"/>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-80dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="45dp"
                 android:fontFamily="@font/plusjakartasans_bold"
-                android:scrollbarSize="16sp"
+                android:textSize="22sp"
                 android:text="Data Siswa"
                 android:textAlignment="center"
                 android:textColor="@color/white" />
@@ -222,7 +230,7 @@
                     android:scrollbarSize="16sp"
                     android:text="Mahasiswa Aktif"
                     android:textColor="@color/white" />
-            <!--TODO: buat lebih menarik dengan warna apalagi karena mahasiswa aktif, serta masukkan datanya-->
+            <!--TODO: buat lebih menarik dengan warna apalagi karena mahasiswa aktif, perbaiki ui dan ukuran-->
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
