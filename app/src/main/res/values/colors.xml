@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="basis_black">#2e2e2e</color>
+    <color name="black_gray">#404040</color>
     <color name="basis_gray">#dee3ea</color>
     <color name="sage">#397d54</color>
     <color name="white">#FFFFFFFF</color>

@@ -5,8 +5,4 @@
         <item name="android:statusBarColor">@color/basis_black</item>
         <item name="android:windowBackground">@color/basis_black</item>
     </style>
-    <style name="Theme.Detail" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/sage</item>
-        <item name="android:windowBackground">@color/sage</item>
-    </style>
 </resources>

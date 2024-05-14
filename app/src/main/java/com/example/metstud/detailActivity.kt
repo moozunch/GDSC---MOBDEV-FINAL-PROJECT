@@ -19,12 +19,11 @@ class detailActivity : AppCompatActivity() {
         val studentData = intent.getParcelableExtra<studentData>("data")
         if (studentData != null) {
             val textView: TextView = findViewById(R.id.name)
-            // Ensure that the view with the provided ID exists in your layout file
-            val imageView: ImageView? = findViewById(R.id.profile_image)
+            val imageView: ImageView? = findViewById(R.id.profile_image) // Ensure that the view with the provided ID exists in your layout file
 
             if (textView != null && imageView != null) {
                 textView.text = studentData.dataName
-                // imageView.setImageResource(studentData.dataImage) // Commented out as the ImageView might not exist
+                imageView.setImageResource(studentData.dataImage) // Commented out as the ImageView might not exist
             }
         }
     }

@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="STUDENT LIST"
-        android:fontFamily="@font/sfprodisplaybold"
+        android:fontFamily="@font/plusjakartasans_bold"
         android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="@color/white"/>
