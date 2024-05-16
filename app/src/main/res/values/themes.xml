@@ -4,5 +4,6 @@
     <style name="Theme.Metstud" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@color/basis_black</item>
         <item name="android:windowBackground">@color/basis_black</item>
+<!--        <item name="android:statusBarColor">#00000000</item>-->
     </style>
 </resources>

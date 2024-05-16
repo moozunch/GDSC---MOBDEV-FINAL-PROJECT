@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Metstud</string>
+    <string name="open_drawer">drawer open</string>
+    <string name="close_drawer">drawer close\n</string>
 </resources>

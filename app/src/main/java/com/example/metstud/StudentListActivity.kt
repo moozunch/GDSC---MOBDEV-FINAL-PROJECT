@@ -1,19 +1,22 @@
 package com.example.metstud
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.Data
-import android.widget.Button
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
 
-class StudentListActivity : AppCompatActivity() {
+class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     //deklarasi variable
     private lateinit var recyclerView: RecyclerView
@@ -28,7 +31,11 @@ class StudentListActivity : AppCompatActivity() {
     lateinit var semesterList: Array<Int>
     lateinit var statusList: Array<String>
     private val ADD_ACTIVITY_REQUEST_CODE = 1
+    lateinit var drawerLayout: DrawerLayout
+    lateinit var navigationView: NavigationView
+    lateinit var toolbar: Toolbar
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,7 +44,13 @@ class StudentListActivity : AppCompatActivity() {
         //isi data yang akan ditampilkan (array)
         imageList = arrayOf(
             R.drawable.profile2, //showcase page, my profile all about
-            R.drawable.profile
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+
         )
 
         nameList = arrayOf(
@@ -135,6 +148,30 @@ class StudentListActivity : AppCompatActivity() {
             }
         })
         recyclerView.adapter = adapter
+
+        //navigation drawer - hooks
+        drawerLayout = findViewById(R.id.drawer)
+        navigationView = findViewById(R.id.nav_drawer)
+        toolbar = findViewById(R.id.nav) //
+
+        //navigation drawer - toolbar
+        setSupportActionBar(toolbar)
+
+        //navigation drawer - navigation drawer menu
+        navigationView.bringToFront()
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        navigationView.setNavigationItemSelectedListener(this)
+    }
+    //agar saat ditekan balik saat drawer terbuka nggak ketutup aplikasinya
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+
     }
 
     //mengambil data dari array dan memasukkannya ke dalam dataList
@@ -176,7 +213,7 @@ class StudentListActivity : AppCompatActivity() {
             val imageUri = data?.getStringExtra("image")
 
             val newData = studentData(
-                R.drawable.profile,
+                R.drawable.profile1,
                 name.toString(),
                 nim.toString(),
                 email.toString(),
@@ -190,6 +227,10 @@ class StudentListActivity : AppCompatActivity() {
             recyclerView.adapter?.notifyDataSetChanged()
         }
 
+    }
+
+    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+        return true
     }
 
 }
