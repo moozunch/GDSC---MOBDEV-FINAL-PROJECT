@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Metstud">
         <activity
+            android:name=".addActivity"
+            android:exported="false" />
+        <activity
             android:name=".detailActivity"
             android:exported="false"
-            android:theme="@style/Theme.Metstud"/>
+            android:theme="@style/Theme.Metstud" />
         <activity
             android:name=".StudentListActivity"
             android:exported="true"
