@@ -71,4 +71,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("de.hdodenhof:circleimageview:1.2.1")
+
 }

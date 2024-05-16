@@ -1,14 +1,17 @@
 package com.example.metstud
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.Data
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class StudentListActivity : AppCompatActivity() {
 
@@ -24,6 +27,7 @@ class StudentListActivity : AppCompatActivity() {
     lateinit var prodiList: Array<String>
     lateinit var semesterList: Array<Int>
     lateinit var statusList: Array<String>
+    private val ADD_ACTIVITY_REQUEST_CODE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -106,5 +110,43 @@ class StudentListActivity : AppCompatActivity() {
             )
             dataList.add(data)
         }
+
+
+        val addButton: FloatingActionButton = findViewById(R.id.fab)
+        addButton.setOnClickListener {
+            val intent = Intent(this, addActivity::class.java)
+            startActivityForResult(intent, ADD_ACTIVITY_REQUEST_CODE)
+        }
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == ADD_ACTIVITY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val name = data?.getStringExtra("name")
+            val nim = data?.getStringExtra("nim")
+            val email = data?.getStringExtra("email")
+            val angkatan = data?.getStringExtra("angkatan")
+            val fakultas = data?.getStringExtra("fakultas")
+            val prodi = data?.getStringExtra("prodi")
+            val semester = data?.getStringExtra("semester")
+            val status = data?.getStringExtra("status")
+            val imageUri = data?.getStringExtra("image")
+
+            val newData = studentData(
+                R.drawable.profile,
+                name.toString(),
+                nim.toString(),
+                email.toString(),
+                angkatan.toString().toInt(),
+                fakultas.toString(),
+                prodi.toString(),
+                semester.toString().toInt(),
+                status.toString()
+            )
+            dataList.add(newData)
+            recyclerView.adapter?.notifyDataSetChanged()
+        }
+
+    }
+
 }

@@ -6,6 +6,7 @@
     app:cardCornerRadius="20dp"
     android:padding="15dp"
     android:elevation="5dp"
+    android:foreground="?selectableItemBackground"
     app:cardBackgroundColor="@color/basis_gray"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
