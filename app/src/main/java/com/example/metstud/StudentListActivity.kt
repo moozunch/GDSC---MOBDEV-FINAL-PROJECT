@@ -36,41 +36,84 @@ class StudentListActivity : AppCompatActivity() {
 
         //isi data yang akan ditampilkan (array)
         imageList = arrayOf(
-            R.drawable.profile2,
+            R.drawable.profile2, //showcase page, my profile all about
             R.drawable.profile
         )
 
         nameList = arrayOf(
-            "Annisa Putri Aprilia",
-            "Desta Rizky Putra"
+            "Annisa Putri Aprilia", //showcase page, my profile all about
+            "Andi Premasa",
+            "Budi Anda",
+            "Caca Mana",
+            "Danang",
+            "Mantap Jiwa",
+            "Banu",
         )
 
         nimList = arrayOf(
             "231401036",
-            "241401340"
+            "241401340",
+            "236392595",
+            "248901819",
+            "239810984",
+            "233825837",
+            "243987529",
         )
 
         emailList = arrayOf(
             "annisaputri@gmail.com",
-            "destarizky@gmail.com",
+            "user1@gmail.com",
+            "user2@gmail.com",
+            "user3@gmail.com",
+            "user4@gmail.com",
+            "user5@gmail.com",
+            "user6@gmail.com",
         )
         angkatanList = arrayOf(
+            23,
+            24,
+            23,
+            24,
+            23,
             23,
             24,
         )
         fakultasList = arrayOf(
             "Fasilkom-Ti",
             "Fakultas Ekonomi dan Bisnis",
+            "Fakultas Ilmu Budaya",
+            "Fakultas Kedokteran",
+            "Fakultas Teknik",
+            "Fakultas Ilmu Sosial dan Politik",
+            "Fakultas Hukum",
+            "Fakultas Kesehatan Masyarakat",
         )
         prodiList = arrayOf(
             "Ilmu Komputer",
             "Kewirausahaan",
+            "Sastra Inggris",
+            "Pendidikan Dokter",
+            "Teknik Mesin",
+            "Ilmu Komunikasi",
+            "Hukum",
+            "Gizi",
         )
         semesterList = arrayOf(
             3,
             1,
+            3,
+            1,
+            3,
+            3,
+            1,
+
         )
         statusList = arrayOf(
+            "Mahasiswa Aktif",
+            "Mahasiswa Aktif",
+            "Mahasiswa Aktif",
+            "Mahasiswa Aktif",
+            "Mahasiswa Aktif",
             "Mahasiswa Aktif",
             "Mahasiswa Aktif",
         )
