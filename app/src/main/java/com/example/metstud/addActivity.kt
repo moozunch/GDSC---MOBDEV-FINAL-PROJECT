@@ -25,7 +25,6 @@ class addActivity : AppCompatActivity() {
 
     private var imageUri: Uri? = null
     private lateinit var profileImage: ImageView
-    private val STORAGE_PERMISSION_CODE = 1
 
     private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         // Handle the returned Uri

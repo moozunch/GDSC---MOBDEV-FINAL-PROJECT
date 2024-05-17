@@ -3,6 +3,7 @@ package com.example.metstud
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -21,7 +22,7 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     //deklarasi variable
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataList: ArrayList<studentData>
-    lateinit var imageList: Array<Int>
+    lateinit var imageList: Array<String>
     lateinit var nameList: Array<String>
     lateinit var nimList: Array<String>
     lateinit var emailList: Array<String>
@@ -43,14 +44,13 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
         //isi data yang akan ditampilkan (array)
         imageList = arrayOf(
-            R.drawable.profile2, //showcase page, my profile all about
-            R.drawable.no_profile_picture_15257,
-            R.drawable.no_profile_picture_15257,
-            R.drawable.no_profile_picture_15257,
-            R.drawable.no_profile_picture_15257,
-            R.drawable.no_profile_picture_15257,
-            R.drawable.no_profile_picture_15257,
-
+            "android.resource://com.example.metstud/drawable/profile2",
+            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
+            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
+            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
+            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
+            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
+            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
         )
 
         nameList = arrayOf(
@@ -212,8 +212,14 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             val status = data?.getStringExtra("status")
             val imageUri = data?.getStringExtra("image")
 
+            val imageResource = if (imageUri != null) {
+                Uri.parse(imageUri)
+            } else {
+                Uri.parse("android.resource://com.example.metstud/" + R.drawable.no_profile_picture_15257)
+            }
+
             val newData = studentData(
-                R.drawable.profile1,
+                imageUri.toString(),
                 name.toString(),
                 nim.toString(),
                 email.toString(),

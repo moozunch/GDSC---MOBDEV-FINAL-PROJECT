@@ -1,6 +1,7 @@
 package com.example.metstud
 
 import android.media.Image
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +21,7 @@ class AdapterClass(private val dataList: ArrayList<studentData>, private val lis
 
     override fun onBindViewHolder(holder: ViewHolderClass, position: Int) {
         val currentItem = dataList[position]
-        holder.rvImage.setImageResource(currentItem.dataImage)
+        holder.rvImage.setImageURI(Uri.parse(currentItem.dataImage))
         holder.rvName.text = currentItem.dataName
         holder.rvNim.text = currentItem.dataNim
 
