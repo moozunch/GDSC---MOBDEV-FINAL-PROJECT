@@ -95,7 +95,7 @@
                 android:background="@drawable/background_box"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -112,7 +112,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
+                        android:layout_marginStart="90dp"
                         android:fontFamily="@font/plusjakartasans_bold"
                         android:scrollbarSize="16sp"
                         android:text=":"
@@ -122,15 +122,15 @@
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="100dp"
                         android:fontFamily="@font/plusjakartasans_semibold"
                         android:scrollbarSize="16sp"
                         android:text="annisa.putri.aprilia@gmail.com"
                         android:textColor="@color/white" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -147,7 +147,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="90dp"
                         android:fontFamily="@font/plusjakartasans_bold"
                         android:scrollbarSize="16sp"
                         android:text=":"
@@ -157,15 +157,15 @@
                         android:id="@+id/angkatan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="100dp"
                         android:fontFamily="@font/plusjakartasans_semibold"
                         android:scrollbarSize="16sp"
                         android:text="23"
                         android:textColor="@color/white" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -182,7 +182,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="28dp"
+                        android:layout_marginStart="90dp"
                         android:fontFamily="@font/plusjakartasans_bold"
                         android:scrollbarSize="16sp"
                         android:text=":"
@@ -192,19 +192,19 @@
                         android:id="@+id/fakultas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="100dp"
                         android:fontFamily="@font/plusjakartasans_semibold"
                         android:scrollbarSize="16sp"
                         android:text="Fasilkom-TI"
                         android:textColor="@color/white" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="40dp" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -221,7 +221,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
+                        android:layout_marginStart="90dp"
                         android:fontFamily="@font/plusjakartasans_bold"
                         android:scrollbarSize="16sp"
                         android:text=":"
@@ -231,17 +231,17 @@
                         android:id="@+id/prodi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="100dp"
                         android:fontFamily="@font/plusjakartasans_semibold"
                         android:scrollbarSize="16sp"
                         android:text="Ilmu Komputer"
                         android:textColor="@color/white" />
 
 
-                </LinearLayout>
+                </RelativeLayout>
 
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -258,7 +258,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="90dp"
                         android:fontFamily="@font/plusjakartasans_bold"
                         android:scrollbarSize="16sp"
                         android:text=":"
@@ -268,15 +268,15 @@
                         android:id="@+id/semester"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="100dp"
                         android:fontFamily="@font/plusjakartasans_semibold"
                         android:scrollbarSize="16sp"
                         android:text="2"
                         android:textColor="@color/white" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -293,7 +293,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="43dp"
+                        android:layout_marginStart="90dp"
                         android:fontFamily="@font/plusjakartasans_bold"
                         android:scrollbarSize="16sp"
                         android:text=":"
@@ -303,13 +303,13 @@
                         android:id="@+id/status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="100dp"
                         android:fontFamily="@font/plusjakartasans_semibold"
                         android:scrollbarSize="16sp"
                         android:text="Mahasiswa Aktif"
                         android:textColor="@color/white" />
                     <!--TODO: buat lebih menarik dengan warna apalagi karena mahasiswa aktif, perbaiki ui dan ukuran-->
-                </LinearLayout>
+                </RelativeLayout>
 
                 <Space
                     android:layout_width="match_parent"
