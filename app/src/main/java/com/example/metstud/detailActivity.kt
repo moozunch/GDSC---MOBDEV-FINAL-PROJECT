@@ -16,13 +16,13 @@ class detailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail) // This should be called before findViewById(...)
+        setContentView(R.layout.activity_detail)
 
         val studentData = intent.getParcelableExtra<studentData>("data")
         if (studentData != null) {
             //deklrasi variable dan tipe data dengan value id nya di layout
             val textView: TextView = findViewById(R.id.name)
-            val imageView: ImageView? = findViewById(R.id.profile_image) // Ensure that the view with the provided ID exists in your layout file
+            val imageView: ImageView? = findViewById(R.id.profile_image)
             val textView2: TextView = findViewById(R.id.nim)
             val textView3: TextView = findViewById(R.id.email)
             val textView4: TextView = findViewById(R.id.angkatan)

@@ -55,7 +55,7 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         )
 
         nameList = arrayOf(
-            "Annisa Putri Aprilia", //showcase page, my profile all about
+            "Annisa Putri Aprilia",
             "Andi Premasa",
             "Budi Anda",
             "Caca Mana",
