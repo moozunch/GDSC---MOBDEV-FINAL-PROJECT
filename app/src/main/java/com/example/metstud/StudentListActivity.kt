@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,7 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     //deklarasi variable
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataList: ArrayList<studentData>
-    lateinit var imageList: Array<String>
+    lateinit var imageList: Array<Int>
     lateinit var nameList: Array<String>
     lateinit var nimList: Array<String>
     lateinit var emailList: Array<String>
@@ -44,13 +45,13 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
         //isi data yang akan ditampilkan (array)
         imageList = arrayOf(
-            "android.resource://com.example.metstud/drawable/profile2",
-            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
-            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
-            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
-            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
-            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
-            "android.resource://com.example.metstud/drawable/no_profile_picture_15257",
+            R.drawable.profile2,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
+            R.drawable.no_profile_picture_15257,
         )
 
         nameList = arrayOf(
@@ -163,6 +164,8 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
+
+        navigationView.setCheckedItem(R.id.list_item) //default terbuka list item
     }
     //agar saat ditekan balik saat drawer terbuka nggak ketutup aplikasinya
     override fun onBackPressed() {
@@ -210,16 +213,11 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             val prodi = data?.getStringExtra("prodi")
             val semester = data?.getStringExtra("semester")
             val status = data?.getStringExtra("status")
-            val imageUri = data?.getStringExtra("image")
+            val imageId = data?.getIntExtra("image", R.drawable.no_profile_picture_15257)
 
-            val imageResource = if (imageUri != null) {
-                Uri.parse(imageUri)
-            } else {
-                Uri.parse("android.resource://com.example.metstud/" + R.drawable.no_profile_picture_15257)
-            }
 
             val newData = studentData(
-                imageUri.toString(),
+                imageId ?: R.drawable.no_profile_picture_15257,
                 name.toString(),
                 nim.toString(),
                 email.toString(),
@@ -231,11 +229,24 @@ class StudentListActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             )
             dataList.add(newData)
             recyclerView.adapter?.notifyDataSetChanged()
+            Toast.makeText(this, "Photo Profil hanya bisa ditambahkan melalui sistem!", Toast.LENGTH_SHORT).show()
         }
 
     }
 
-    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.list_item -> Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+            R.id.profile_item -> {
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.about_item -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 

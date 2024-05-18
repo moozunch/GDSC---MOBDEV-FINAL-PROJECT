@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 import java.io.IOException
 import android.Manifest
 import android.util.Log
+import android.widget.Toast
 
 class addActivity : AppCompatActivity() {
 
@@ -32,10 +33,10 @@ class addActivity : AppCompatActivity() {
         try {
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
             profileImage.setImageBitmap(bitmap)
-            Log.d("addActivity", "Image set successfully") // Add this line
+            Log.d("addActivity", "Image set successfully")
         } catch (e: IOException) {
             e.printStackTrace()
-            Log.e("addActivity", "Error setting image", e) // Add this line
+            Log.e("addActivity", "Error setting image", e)
         }
     }
 
@@ -62,18 +63,30 @@ class addActivity : AppCompatActivity() {
         val backButton = findViewById<TextView>(R.id.cancel)
 
         lanjutkan.setOnClickListener{
-            val intent = Intent()
-            intent.putExtra("image", imageUri.toString())
-            intent.putExtra("name", name.text.toString())
-            intent.putExtra("nim", nim.text.toString())
-            intent.putExtra("email", email.text.toString())
-            intent.putExtra("angkatan", angkatan.text.toString())
-            intent.putExtra("fakultas", fakultas.text.toString())
-            intent.putExtra("prodi", prodi.text.toString())
-            intent.putExtra("semester", semester.text.toString())
-            intent.putExtra("status", status.text.toString())
-            setResult(Activity.RESULT_OK, intent)
-            finish()
+            if (name.text.toString().isEmpty() ||
+                nim.text.toString().isEmpty() ||
+                email.text.toString().isEmpty() ||
+                angkatan.text.toString().isEmpty() ||
+                fakultas.text.toString().isEmpty() ||
+                prodi.text.toString().isEmpty() ||
+                semester.text.toString().isEmpty() ||
+                status.text.toString().isEmpty()) {
+
+                Toast.makeText(this, "Data harus diisi!", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent()
+                intent.putExtra("image", imageUri.toString())
+                intent.putExtra("name", name.text.toString())
+                intent.putExtra("nim", nim.text.toString())
+                intent.putExtra("email", email.text.toString())
+                intent.putExtra("angkatan", angkatan.text.toString())
+                intent.putExtra("fakultas", fakultas.text.toString())
+                intent.putExtra("prodi", prodi.text.toString())
+                intent.putExtra("semester", semester.text.toString())
+                intent.putExtra("status", status.text.toString())
+                setResult(Activity.RESULT_OK, intent)
+                finish()
+            }
         }
 
 

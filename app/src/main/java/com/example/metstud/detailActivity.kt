@@ -40,7 +40,7 @@ class detailActivity : AppCompatActivity() {
             //pengisian value di layout app dengan data dari studentData yang diambil dari StudentListActivity
             if (textView != null && imageView != null) {
                 textView.text = studentData.dataName
-                imageView.setImageURI(Uri.parse(studentData.dataImage))
+                imageView.setImageResource(studentData.dataImage)
                 textView2.text = studentData.dataNim
                 textView3.text = studentData.dataEmail
                 textView4.text = studentData.dataAngkatan.toString()

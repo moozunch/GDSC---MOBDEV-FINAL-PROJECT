@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class studentData(
-    var dataImage: String,
+    var dataImage: Int,
     var dataName: String,
     var dataNim: String,
     var dataEmail: String,
@@ -15,7 +15,7 @@ data class studentData(
     var dataStatus: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString()!!,
+        parcel.readInt(),
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
@@ -28,7 +28,7 @@ data class studentData(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(dataImage)
+        parcel.writeInt(dataImage)
         parcel.writeString(dataName)
         parcel.writeString(dataNim)
         parcel.writeString(dataEmail)

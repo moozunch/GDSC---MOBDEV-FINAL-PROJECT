@@ -10,7 +10,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/no_profile_picture_15257"
+        android:src="@drawable/me"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"

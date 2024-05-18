@@ -1,24 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:fitsSystemWindows="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/plusjakartasans_bold"
-            android:text="Profile"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="22sp" />
-    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/linear_layout">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/nav"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="25dp"
+                        android:minHeight="?actionBarSize"
+                        android:layout_marginEnd="45dp"
+                        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                        app:navigationIcon="@drawable/bars_svgrepo_com" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/plusjakartasans_bold"
+                        android:text="PROFILE"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_bold"
+                    android:text="Hello there 🖐"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/me" />
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:textAlignment="center"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="My name is Annisa Putri Aprilia, I am a Computer Science Student at University of Sumatera Utara."
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="Ever since i got into computer science, coding and developing has been my favorite things to do, tho I still have some hobbies that I still enjoy doing when I got bored at coding hehe, here's some of my hobbies: "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:textAlignment="center"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="1. Photography - Here's one of the result: "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="133dp"
+                    android:src="@drawable/canon1"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="2. Video Editing - Funfact: I have been editing more than 5 years, yep since 2018!\npsst clicked the image below to see the video 😏 "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:id="@+id/oodj8e"
+                    android:src="@drawable/oodj8ethumbnail"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="3. Drawing - hehe this is my old hobbies especially when I was in High School, I still think I have incredible hand on this tho hehe"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="Welp that's it but really tho I actully had a lot of hobbies, I'm the type of person to love learn new things so hehe :D, I also Love to listen to music A LOT!!"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="Here's more things to know about me: "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="1. Tech Enthusiast and yap a lot about Github\n2. Mostly Interested in Mobile and Software Development, OH! and I also currently interested in Machine Learning!\n3. Love to experincing new tools and new environment."
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="I think that's all about me, this is experimental showcase page, I'll learn to make it better by more project to come so follow my progress with me and connect thru my social media - check about page"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/plusjakartasans_bold"
+                    android:text="See You! 🖐"
+                    android:layout_marginEnd="20dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_drawer"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/utama_menu"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:subheaderColor="@color/white"
+        android:background="@color/black_gray"
+        android:layout_gravity="start"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
