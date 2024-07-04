@@ -28,7 +28,8 @@
         <div class="download">
             <h3>Download</h3>
             <hr>
-            <p>Click <a href="https://drive.google.com/drive/folders/1l6HQIFXNO1TWkU0Yog69H-w_C7iG4Vjs?usp=sharing">Here</a> to Download.</p>
+            <p>Download the pre-release <a href="https://github.com/moozunch/GDSC-MOBDEV-FINAL-PROJECT/releases/tag/v0.1.0-alpha">here</a> or
+            Using Drive <a href="https://drive.google.com/drive/folders/1l6HQIFXNO1TWkU0Yog69H-w_C7iG4Vjs?usp=sharing">here</a>.</p>
         </div>
     </div>
 </body>
